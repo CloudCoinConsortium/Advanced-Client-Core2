@@ -1,0 +1,6 @@
+D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\FolderManager\bin\Debug\FolderManager.dll
+D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\FolderManager\bin\Debug\FolderManager.pdb
+D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\FolderManager\obj\Debug\FolderManager.csprojResolveAssemblyReference.cache
+D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\FolderManager\obj\Debug\FolderManager.csproj.CoreCompileInputs.cache
+D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\FolderManager\obj\Debug\FolderManager.dll
+D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\FolderManager\obj\Debug\FolderManager.pdb

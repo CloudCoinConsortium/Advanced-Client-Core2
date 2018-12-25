@@ -1,0 +1,3 @@
+{
+    "url":"https://RAIDA1.cloudcoin.global/service/"
+}
