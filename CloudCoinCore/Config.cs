@@ -10,6 +10,10 @@ namespace CloudCoinCore
         public static string TAG_EXPORT = "Export";
         public static string TAG_BANK = "Bank";
         public static string TAG_LOST = "Lost";
+        public static string TAG_MIND = "Mind";
+        public static string TAG_VAULT = "Vault";
+        public static string TAG_GALLERY = "Gallery";
+
         public static string TAG_IMPORTED = "Imported";
         public static string TAG_FRACKED = "Fracked";
         public static string TAG_TEMPLATES = "Templates";

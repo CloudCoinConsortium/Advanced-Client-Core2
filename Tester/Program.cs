@@ -7,6 +7,9 @@ using System.IO;
 using CloudCoinServants;
 using CloudCoin_ShowCoins;
 using FolderManager;
+using System.Diagnostics;
+using CloudCoin_Backupper;
+using CloudCoinGrader;
 
 namespace Tester
 {
@@ -19,6 +22,8 @@ namespace Tester
         public static String URL_DIRECTORY = "";
         public static String TAG_COMMAND = "Command";
         public static String TAG_ECHOER = "Echoer";
+        public static String TAG_BACKUPPER= "Backupper";
+
 
         static void Main(string[] args)
         {
@@ -38,10 +43,17 @@ namespace Tester
             // Echoer echoer = new Echoer(CommandFolder);
             //echoer.
             ShowCoins showCoins = new ShowCoins(CommandFolder);
-            showCoins.showCoins();
-            Console.WriteLine("Watching folder " + CommandFolder + ".\nLogs folder- "+ FolderManager.FolderManager.ShowCoinsLogsFolder + "\n.Bank Folder location- "+ FolderManager.FolderManager.BankFolder);
-            Console.ReadLine();
+            Backupper backupper = new Backupper(CommandFolder);
+            Grader grader = new Grader(FolderManager.FolderManager.RootPath);
+            CloudCoinUnpacker.Unpacker unpacker = new CloudCoinUnpacker.Unpacker(FolderManager.FolderManager.RootPath);
 
+            Process.Start(FolderManager.FolderManager.RootPath);
+
+            //showCoins.showCoins();
+            //Console.WriteLine("Watching folder " + CommandFolder + ".\nLogs folder- "+ FolderManager.FolderManager.ShowCoinsLogsFolder + "\n.Bank Folder location- "+ FolderManager.FolderManager.BankFolder);
+            Console.ReadLine();
+            
+            
 
             
         }

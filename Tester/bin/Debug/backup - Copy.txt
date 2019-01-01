@@ -1,0 +1,5 @@
+{
+	"command":"backup",
+	"account":"default",
+	"toPath":"D:\\CloudCoinProjects\\CloudCoin-Servants\\CloudCoin-Echoer\\Tester\\bin\\Debug\\Command"
+}

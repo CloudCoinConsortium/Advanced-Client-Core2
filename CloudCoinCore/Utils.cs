@@ -20,11 +20,13 @@ namespace CloudCoinCore
                 {
                     string json = r.ReadToEnd();
                     Stack coins = JsonConvert.DeserializeObject<Stack>(json);
+                    r.Close();
                     return coins.cc;
                 }
             }
             catch(Exception e)
             {
+                
                 return null;
             }
         }

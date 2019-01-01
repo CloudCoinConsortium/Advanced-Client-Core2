@@ -470,12 +470,12 @@ namespace CloudCoinCore
             {
                 if (charCount(pown, 'f') > 0)//Any Fails?
                 {
-                    folder = RAIDA.ActiveRAIDA.FS.FrackedFolder;
+                    folder = Config.TAG_FRACKED;
                     return;
                 }
                 else//no fails
                 {
-                    folder = RAIDA.ActiveRAIDA.FS.BankFolder;
+                    folder = Config.TAG_BANK;
                     return;
                 }//There were fracked
             }
@@ -483,12 +483,12 @@ namespace CloudCoinCore
             {
                 if ((charCount(pown, 'p') + charCount(pown, 'f')) > 15)// is the RAIDA healthy
                 {
-                    folder = RAIDA.ActiveRAIDA.FS.CounterfeitFolder;
+                    folder = Config.TAG_COUNTERFEIT;
                     return;
                 }
                 else
                 {
-                    folder = RAIDA.ActiveRAIDA.FS.LostFolder;
+                    folder = Config.TAG_LOST;
                     return;
                 }// end if RAIDA health low
 

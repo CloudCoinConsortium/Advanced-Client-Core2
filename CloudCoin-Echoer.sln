@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin-ShowCoins", "Clou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderManager", "FolderManager\FolderManager.csproj", "{3D211C49-AE48-4CED-9746-A900A472E587}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin-Backupper", "CloudCoin-Backupper\CloudCoin-Backupper.csproj", "{AE3BE121-A79C-4AAE-91D2-BE89098AE77F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinGrader", "CloudCoinGrader\CloudCoinGrader.csproj", "{6A849C30-397E-473C-8EA0-9590C8651EEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin-Unpacker", "CloudCoin-Unpacker\CloudCoin-Unpacker.csproj", "{5CBCF758-C957-4675-8F14-C70DAD0D6293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin-Exporter", "CloudCoin-Exporter\CloudCoin-Exporter.csproj", "{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +47,22 @@ Global
 		{3D211C49-AE48-4CED-9746-A900A472E587}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D211C49-AE48-4CED-9746-A900A472E587}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D211C49-AE48-4CED-9746-A900A472E587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3BE121-A79C-4AAE-91D2-BE89098AE77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3BE121-A79C-4AAE-91D2-BE89098AE77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3BE121-A79C-4AAE-91D2-BE89098AE77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3BE121-A79C-4AAE-91D2-BE89098AE77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A849C30-397E-473C-8EA0-9590C8651EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A849C30-397E-473C-8EA0-9590C8651EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A849C30-397E-473C-8EA0-9590C8651EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A849C30-397E-473C-8EA0-9590C8651EEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBCF758-C957-4675-8F14-C70DAD0D6293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBCF758-C957-4675-8F14-C70DAD0D6293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBCF758-C957-4675-8F14-C70DAD0D6293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBCF758-C957-4675-8F14-C70DAD0D6293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

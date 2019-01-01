@@ -49,13 +49,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CloudCoin-Backupper\CloudCoin-Backupper.csproj">
+      <Project>{ae3be121-a79c-4aae-91d2-be89098ae77f}</Project>
+      <Name>CloudCoin-Backupper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CloudCoin-Echoer\CloudCoin-Echoer.csproj">
       <Project>{fba12216-efdc-4016-b87d-bbb2fa002524}</Project>
       <Name>CloudCoin-Echoer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CloudCoin-Exporter\CloudCoin-Exporter.csproj">
+      <Project>{1fc38125-e257-4f2f-a14f-effb8b0e4e8d}</Project>
+      <Name>CloudCoin-Exporter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CloudCoin-ShowCoins\CloudCoin-ShowCoins.csproj">
       <Project>{9ea69d99-0bea-4954-877e-6e0948a66c83}</Project>
       <Name>CloudCoin-ShowCoins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoin-Unpacker\CloudCoin-Unpacker.csproj">
+      <Project>{5cbcf758-c957-4675-8f14-c70dad0d6293}</Project>
+      <Name>CloudCoin-Unpacker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoinGrader\CloudCoinGrader.csproj">
+      <Project>{6a849c30-397e-473c-8ea0-9590c8651eef}</Project>
+      <Name>CloudCoinGrader</Name>
     </ProjectReference>
     <ProjectReference Include="..\FolderManager\FolderManager.csproj">
       <Project>{3d211c49-ae48-4ced-9746-a900a472e587}</Project>

@@ -216,6 +216,59 @@ namespace CloudCoinCore
             return folderCoins;
         }
 
+        public List<CloudCoin> LoadCoinsFromFile(string filename)
+        {
+            List<CloudCoin> folderCoins = new List<CloudCoin>();
+
+
+            // Get All the supported CloudCoin Files from the folder
+            
+            //string[] fnames = new string[files.Count()];
+           
+                string fname = Path.GetFileName(filename);
+                string ext = Path.GetExtension(filename);
+                if (ext == ".stack" || ext == ".celebrium" || ext == ".celeb")
+                {
+                    var coins = Utils.LoadJson(filename);
+                    if (coins != null)
+                    {
+                        coins.ToList().ForEach(x => x.ExistingFileName = fname);
+                        folderCoins.AddRange(coins);
+                    }
+                }
+                if (ext == ".jpeg" || ext == ".jpg")
+                {
+                    try
+                    {
+                        var coin = importJPEG(filename);
+                        coin.ExistingFileName = fname;
+                        folderCoins.Add(coin);
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+                if (ext == ".csv")
+                {
+                    var lines = File.ReadAllLines(filename);
+                    //var lines = File.ReadAllLines(fileName).Select(a => a.Split(','));
+                    List<CloudCoin> CsvCoins = new List<CloudCoin>();
+
+
+                    foreach (var line in lines)
+                    {
+                        CsvCoins.Add(CloudCoin.FromCSV(line));
+                    }
+                    CsvCoins.RemoveAll(item => item == null);
+                    CsvCoins.ForEach(x => x.ExistingFileName = fname);
+                    folderCoins.AddRange(CsvCoins);
+                }
+            
+
+            return folderCoins;
+        }
+
         private CloudCoin ReadQRCode(String fileName)//Read a CloudCoin from QR Code 
         {
             CloudCoin coin = new CloudCoin();
