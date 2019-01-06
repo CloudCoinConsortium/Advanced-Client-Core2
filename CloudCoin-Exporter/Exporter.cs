@@ -17,7 +17,7 @@ namespace CloudCoin_Exporter
         int note100, return100, note50, return50, note25, return25, note10, return10,
         note5, return5, note1, return1, coin1, returncoins;
         int billamount = 0, recvamount = 0, differ = 0, change = 0;
-        int exportJpegStack = 0;
+        int exportJpegStack = 1;
         public Exporter(string BasePath)
         {
             FileSystemWatcher watcher = new FileSystemWatcher();

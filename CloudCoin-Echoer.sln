@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin-Unpacker", "Cloud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin-Exporter", "CloudCoin-Exporter\CloudCoin-Exporter.csproj", "{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinEraser", "CloudCoinEraser\CloudCoinEraser.csproj", "{7063FE83-2F45-47E6-8A6C-4990A1C59A93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC38125-E257-4F2F-A14F-EFFB8B0E4E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7063FE83-2F45-47E6-8A6C-4990A1C59A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7063FE83-2F45-47E6-8A6C-4990A1C59A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7063FE83-2F45-47E6-8A6C-4990A1C59A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7063FE83-2F45-47E6-8A6C-4990A1C59A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -28,10 +28,6 @@ D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\Tester\bin\Debug\x86\li
 D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\Tester\bin\Debug\x64\libSkiaSharp.dll
 D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\Tester\bin\Debug\CloudCoin-Backupper.dll
 D:\CloudCoinProjects\CloudCoin-Servants\CloudCoin-Echoer\Tester\bin\Debug\CloudCoin-Backupper.pdb
-D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\libSkiaSharp.dll
-D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\libSkiaSharp.dylib
-D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\x86\libSkiaSharp.dll
-D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\x64\libSkiaSharp.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\Tester.exe.config
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\Tester.exe
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\Tester.pdb
@@ -62,3 +58,11 @@ D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.exe
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoin-Unpacker.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoin-Unpacker.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoin-Exporter.dll
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinEraser.dll
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoin-Exporter.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinEraser.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\libSkiaSharp.dll
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\libSkiaSharp.dylib
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\x86\libSkiaSharp.dll
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\x64\libSkiaSharp.dll

@@ -69,6 +69,10 @@
       <Project>{5cbcf758-c957-4675-8f14-c70dad0d6293}</Project>
       <Name>CloudCoin-Unpacker</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CloudCoinEraser\CloudCoinEraser.csproj">
+      <Project>{7063fe83-2f45-47e6-8a6c-4990a1c59a93}</Project>
+      <Name>CloudCoinEraser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CloudCoinGrader\CloudCoinGrader.csproj">
       <Project>{6a849c30-397e-473c-8ea0-9590c8651eef}</Project>
       <Name>CloudCoinGrader</Name>

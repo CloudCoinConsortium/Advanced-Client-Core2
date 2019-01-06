@@ -10,6 +10,7 @@ using FolderManager;
 using System.Diagnostics;
 using CloudCoin_Backupper;
 using CloudCoinGrader;
+using CloudCoinEraser;
 
 namespace Tester
 {
@@ -20,7 +21,7 @@ namespace Tester
         public static String TAG_LOGS = "Logs";
         public static String TAG_RECEIPTS = "Receipts";
         public static String URL_DIRECTORY = "";
-        public static String TAG_COMMAND = "Command";
+        public static String TAG_COMMAND = "Commands";
         public static String TAG_ECHOER = "Echoer";
         public static String TAG_BACKUPPER= "Backupper";
 
@@ -42,11 +43,11 @@ namespace Tester
             //Console.Write("Created Directories. Press enter to exit");
             // Echoer echoer = new Echoer(CommandFolder);
             //echoer.
-            ShowCoins showCoins = new ShowCoins(CommandFolder);
-            Backupper backupper = new Backupper(CommandFolder);
-            Grader grader = new Grader(FolderManager.FolderManager.RootPath);
-            CloudCoinUnpacker.Unpacker unpacker = new CloudCoinUnpacker.Unpacker(FolderManager.FolderManager.RootPath);
-
+            //ShowCoins showCoins = new ShowCoins(CommandFolder);
+            //Backupper backupper = new Backupper(CommandFolder);
+            //Grader grader = new Grader(FolderManager.FolderManager.RootPath);
+            //CloudCoinUnpacker.Unpacker unpacker = new CloudCoinUnpacker.Unpacker(FolderManager.FolderManager.RootPath);
+            Eraser eraser = new Eraser(CommandFolder);
             Process.Start(FolderManager.FolderManager.RootPath);
 
             //showCoins.showCoins();
