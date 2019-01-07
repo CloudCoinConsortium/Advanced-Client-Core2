@@ -11,6 +11,7 @@ using System.Diagnostics;
 using CloudCoin_Backupper;
 using CloudCoinGrader;
 using CloudCoinEraser;
+using CloudCoinAuthenticator;
 
 namespace Tester
 {
@@ -49,6 +50,8 @@ namespace Tester
             //CloudCoinUnpacker.Unpacker unpacker = new CloudCoinUnpacker.Unpacker(FolderManager.FolderManager.RootPath);
             Eraser eraser = new Eraser(CommandFolder);
             Process.Start(FolderManager.FolderManager.RootPath);
+
+            Authenticator authenticator = new Authenticator(CommandFolder);
 
             //showCoins.showCoins();
             //Console.WriteLine("Watching folder " + CommandFolder + ".\nLogs folder- "+ FolderManager.FolderManager.ShowCoinsLogsFolder + "\n.Bank Folder location- "+ FolderManager.FolderManager.BankFolder);
