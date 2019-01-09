@@ -28,15 +28,15 @@ namespace CloudCoinAuthenticator
             watcher.Filter = "*.txt";
 
             // Add event handlers.
-            watcher.Changed += new FileSystemEventHandler(OnChanged);
-            watcher.Created += new FileSystemEventHandler(OnChanged);
-            watcher.Deleted += new FileSystemEventHandler(OnChanged);
+            watcher.Changed += new FileSystemEventHandler(OnChangedAsync);
+            watcher.Created += new FileSystemEventHandler(OnChangedAsync);
+            watcher.Deleted += new FileSystemEventHandler(OnChangedAsync);
             // watcher.Renamed += new RenamedEventHandler(OnRenamed);
 
             watcher.EnableRaisingEvents = true;
         }
 
-        private static void OnChanged(object source, FileSystemEventArgs e)
+        private static async void OnChangedAsync(object source, FileSystemEventArgs e)
         {
             // Specify what is done when a file is changed, created, or deleted.
             Console.WriteLine("File: " + e.FullPath + " " + e.ChangeType);
@@ -67,11 +67,96 @@ namespace CloudCoinAuthenticator
                         string logsPath = FolderManager.FolderManager.BasePath + Path.DirectorySeparatorChar + "Logs";
                         string userLogsLocation = FolderManager.FolderManager.BasePath + Path.DirectorySeparatorChar + "accounts" + Path.DirectorySeparatorChar + account + Path.DirectorySeparatorChar + Config.TAG_LOGS;
                         string userRecieptsLocation = FolderManager.FolderManager.BasePath + Path.DirectorySeparatorChar + "accounts" + Path.DirectorySeparatorChar + account + Path.DirectorySeparatorChar + "Receipts";
+                        string suspectLocation = FolderManager.FolderManager.BasePath + Path.DirectorySeparatorChar + "accounts" + Path.DirectorySeparatorChar + account + Path.DirectorySeparatorChar + "Suspect";
+                        string detectedLocation = FolderManager.FolderManager.BasePath + Path.DirectorySeparatorChar + "accounts" + Path.DirectorySeparatorChar + account + Path.DirectorySeparatorChar + "Detected";
+                        string predetectLocation = FolderManager.FolderManager.BasePath + Path.DirectorySeparatorChar + "accounts" + Path.DirectorySeparatorChar + account + Path.DirectorySeparatorChar + "Predetect";
 
-                       if(command == "pown")
+
+                        if (command == "pown")
                         {
+                            var suspectcoins = FS.LoadFolderCoins(suspectLocation);
+                            Array.ForEach(Directory.GetFiles(predetectLocation),
+                              delegate (string path) { File.Delete(path); });
+                            foreach(var coin in suspectcoins)
+                            {
+                                FS.WriteCoin(coin, predetectLocation);
+                            }
+                            var predetectCoins = FS.LoadFolderCoins(predetectLocation);
 
-                        }
+                            int LotCount = predetectCoins.Count() / Config.MultiDetectLoad;
+                            if (predetectCoins.Count() % Config.MultiDetectLoad > 0) LotCount++;
+                            ProgressChangedEventArgs pge = new ProgressChangedEventArgs();
+
+                            int CoinCount = 0;
+                            int totalCoinCount = predetectCoins.Count();
+                            RAIDA raida = RAIDA.GetInstance();
+
+                            for (int i = 0; i < LotCount; i++)
+                            {
+                                //Pick up 200 Coins and send them to RAIDA
+                                var coins = predetectCoins.Skip(i * Config.MultiDetectLoad).Take(Config.MultiDetectLoad);
+
+                                try
+                                {
+                                    raida.coins = coins;
+                                    var tasks = raida.GetMultiDetectTasks(coins.ToArray(), Config.milliSecondsToTimeOut, true);
+
+                                    try
+                                    {
+                                        string requestFileName = Utils.RandomString(16).ToLower() + DateTime.Now.ToString("yyyyMMddHHmmss") + ".stack";
+                                        // Write Request To file before detect
+                                        FS.WriteCoinsToFile(coins, FS.RequestsFolder + requestFileName);
+                                        await Task.WhenAll(tasks.AsParallel().Select(async task => await task()));
+                                        int j = 0;
+                                        foreach (var coin in coins)
+                                        {
+                                            coin.pown = "";
+                                            for (int k = 0; k < CloudCoinCore.Config.NodeCount; k++)
+                                            {
+                                                coin.response[k] = raida.nodes[k].MultiResponse.responses[j];
+                                                coin.pown += coin.response[k].outcome.Substring(0, 1);
+                                            }
+                                            int countp = coin.response.Where(x => x.outcome == "pass").Count();
+                                            int countf = coin.response.Where(x => x.outcome == "fail").Count();
+                                            coin.PassCount = countp;
+                                            coin.FailCount = countf;
+                                            CoinCount++;
+
+
+                                           
+
+                                            pge.MinorProgress = (CoinCount) * 100 / totalCoinCount;
+                                           // Debug.WriteLine("Minor Progress- " + pge.MinorProgress);
+                                            raida.OnProgressChanged(pge);
+                                            coin.doPostProcessing();
+                                            j++;
+                                        }
+                                        pge.MinorProgress = (CoinCount - 1) * 100 / totalCoinCount;
+                                       // Debug.WriteLine("Minor Progress- " + pge.MinorProgress);
+                                        raida.OnProgressChanged(pge);
+                                        FS.WriteCoin(coins, FS.DetectedFolder, true);
+                                        FS.RemoveCoinsByFileName(coins, FS.PreDetectFolder);
+
+                                        
+                                        //FS.WriteCoin(coins, FS.DetectedFolder);
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                       // Debug.WriteLine(ex.Message);
+                                    }
+
+
+                                }
+                                catch (Exception exx)
+                                {
+                                    Console.WriteLine(exx.Message);
+                                }
+
+
+                            }
+
+                            }
 
 
                     }
