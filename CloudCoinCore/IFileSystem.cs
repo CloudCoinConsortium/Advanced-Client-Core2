@@ -804,7 +804,7 @@ namespace CloudCoinCore
                 serializer.Converters.Add(new JavaScriptDateTimeConverter());
                 serializer.NullValueHandling = NullValueHandling.Ignore;
                 Stack stack = new Stack(coin);
-                using (StreamWriter sw = new StreamWriter(folder + fileName + ".stack"))
+                using (StreamWriter sw = new StreamWriter(folder+ System.IO.Path.DirectorySeparatorChar + fileName + ".stack"))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
                     serializer.Serialize(writer, stack);

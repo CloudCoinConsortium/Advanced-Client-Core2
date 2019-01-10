@@ -43,7 +43,7 @@ namespace CloudCoinAuthenticator
             if (e.ChangeType == WatcherChangeTypes.Created || e.ChangeType == WatcherChangeTypes.Renamed)
             {
                 Console.WriteLine("\n" + Path.GetFileName(e.FullPath));
-                if (Path.GetFileName(e.FullPath).Contains("erase"))
+                //if (Path.GetFileName(e.FullPath).Contains("erase"))
                 {
                     Console.WriteLine("caught erase command");
                     string jsonText = "";
@@ -90,6 +90,7 @@ namespace CloudCoinAuthenticator
                             int CoinCount = 0;
                             int totalCoinCount = predetectCoins.Count();
                             RAIDA raida = RAIDA.GetInstance();
+                            RAIDA.ActiveRAIDA = raida;
 
                             for (int i = 0; i < LotCount; i++)
                             {
@@ -134,8 +135,10 @@ namespace CloudCoinAuthenticator
                                         pge.MinorProgress = (CoinCount - 1) * 100 / totalCoinCount;
                                        // Debug.WriteLine("Minor Progress- " + pge.MinorProgress);
                                         raida.OnProgressChanged(pge);
-                                        FS.WriteCoin(coins, FS.DetectedFolder, true);
-                                        FS.RemoveCoinsByFileName(coins, FS.PreDetectFolder);
+                                        FS.WriteCoin(coins, detectedLocation, true);
+                                        FS.RemoveCoinsByFileName(coins, predetectLocation);
+                                        FS.RemoveCoinsByFileName(coins, suspectLocation);
+
 
                                         
                                         //FS.WriteCoin(coins, FS.DetectedFolder);
