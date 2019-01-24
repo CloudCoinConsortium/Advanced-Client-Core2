@@ -12,6 +12,7 @@ using CloudCoin_Backupper;
 using CloudCoinGrader;
 using CloudCoinEraser;
 using CloudCoinAuthenticator;
+using CloudCoinVaulter;
 
 namespace Tester
 {
@@ -52,6 +53,7 @@ namespace Tester
             Process.Start(FolderManager.FolderManager.RootPath);
 
             Authenticator authenticator = new Authenticator(CommandFolder);
+            Vaulter vaulter = new Vaulter(CommandFolder);
 
             //showCoins.showCoins();
             //Console.WriteLine("Watching folder " + CommandFolder + ".\nLogs folder- "+ FolderManager.FolderManager.ShowCoinsLogsFolder + "\n.Bank Folder location- "+ FolderManager.FolderManager.BankFolder);
