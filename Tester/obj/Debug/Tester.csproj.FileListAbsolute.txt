@@ -68,3 +68,5 @@ D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\x86\libSkiaSharp.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\x64\libSkiaSharp.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinAuthenticator.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinAuthenticator.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinVaulter.dll
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinVaulter.pdb

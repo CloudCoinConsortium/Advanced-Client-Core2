@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinEraser", "CloudCoi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinAuthenticator", "CloudCoinAuthenticator\CloudCoinAuthenticator.csproj", "{438C87F0-7908-447D-BC2A-A06E9026E81B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinAdvancedClient-UI", "CloudCoinAdvancedClient-UI\CloudCoinAdvancedClient-UI.csproj", "{5B934244-B74D-427F-891D-E81A6F1CACBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinVaulter", "CloudCoinVaulter\CloudCoinVaulter.csproj", "{7EF86DFB-5130-4547-94CE-2FFD77219EDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{438C87F0-7908-447D-BC2A-A06E9026E81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{438C87F0-7908-447D-BC2A-A06E9026E81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{438C87F0-7908-447D-BC2A-A06E9026E81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B934244-B74D-427F-891D-E81A6F1CACBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B934244-B74D-427F-891D-E81A6F1CACBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B934244-B74D-427F-891D-E81A6F1CACBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B934244-B74D-427F-891D-E81A6F1CACBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

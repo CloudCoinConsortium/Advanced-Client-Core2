@@ -14,6 +14,24 @@ namespace CloudCoinVaulter
         public static FileSystem FS;
 
 
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
+
         public Vaulter(string BasePath)
         {
             FileSystemWatcher watcher = new FileSystemWatcher();
@@ -32,7 +50,7 @@ namespace CloudCoinVaulter
             watcher.Changed += new FileSystemEventHandler(OnChanged);
             watcher.Created += new FileSystemEventHandler(OnChanged);
             watcher.Deleted += new FileSystemEventHandler(OnChanged);
-            watcher.Renamed += new RenamedEventHandler(OnRenamed);
+            watcher.Renamed += new RenamedEventHandler(OnChanged);
 
             watcher.EnableRaisingEvents = true;
         }
@@ -47,7 +65,94 @@ namespace CloudCoinVaulter
                 if (Path.GetFileName(e.FullPath).Contains("vault"))
                 {
                     //File.WriteAllText(lostFileName, "");
-                    File.Delete(e.FullPath);
+                    string jsonText = "";
+                    try
+                    {
+                        FileStream reader = new FileStream(e.FullPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                        using (var sr = new StreamReader(reader, Encoding.Default))
+                        {
+                            jsonText = sr.ReadToEnd();
+                            // read the stream
+                            //...
+                        }
+                        var jo = Newtonsoft.Json.Linq.JObject.Parse(@jsonText);
+                        string account = jo.GetValue("account").ToString();
+                        string command = jo.GetValue("command").ToString();
+                        string passphrase = jo.GetValue("passphrase").ToString();
+                        string cloudcoin = jo.GetValue("cloudcoin").ToString();
+                        FileSystem fs = new FileSystem("");
+                        FS = new FileSystem(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_DETECTED);
+                        var bankCoins = FS.LoadFolderCoins(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_FRACKED);
+                        string VaultPath = FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_VAULT;
+                        if (command == "toVault")
+                        {
+                            string md5 = CreateMD5(passphrase);
+                            int intAgain = int.Parse("A436BF8C", System.Globalization.NumberStyles.HexNumber);
+                            int coinCount = 0;
+                            foreach(var coin in bankCoins)
+                            {
+                                int anCount = 0;
+                                List<string> newANS = new List<string>(new string[Config.NodeCount]);
+                                
+                                foreach(var an in coin.an)
+                                {
+                                    Console.WriteLine("AN is " + an);
+                                    string secondOctect = an.Substring(8, 8);
+                                    string thirdOctect = an.Substring(15, 8);
+                                    string firstOctect = an.Substring(0, 8);
+                                    string fourthOctect = an.Substring(23, 8);
+
+                                    int firstOctectInt = int.Parse(secondOctect, System.Globalization.NumberStyles.HexNumber);
+                                    int secondOctectInt = int.Parse(thirdOctect, System.Globalization.NumberStyles.HexNumber);
+
+                                    Console.WriteLine("Second Octect -" + secondOctect);
+                                    Console.WriteLine("Third Octect -" + thirdOctect);
+
+                                    string passFirstOctect = md5.Substring(0, 8);
+                                    string passSecondOctect = md5.Substring(8, 8);
+
+                                    int thirdOctectInt = int.Parse(passFirstOctect, System.Globalization.NumberStyles.HexNumber);
+                                    int fourthOctectInt = int.Parse(passSecondOctect, System.Globalization.NumberStyles.HexNumber);
+
+                                    Console.WriteLine("Pass First Octect -" + secondOctect);
+                                    Console.WriteLine("Pass Second Octect -" + thirdOctect);
+                                    int firstDiff = firstOctectInt - thirdOctectInt;
+                                    int secondDiff = secondOctectInt - fourthOctectInt;
+
+                                    Console.WriteLine("first diff-" + firstDiff);
+                                    Console.WriteLine("second diff-" + secondDiff);
+
+                                    string firstDiffHex = firstDiff.ToString("X");
+                                    string secondDiffHex = secondDiff.ToString("X");
+
+                                    Console.WriteLine("First Diff hex - " + firstDiffHex);
+                                    Console.WriteLine("Second Diff hex - " + secondDiffHex);
+                                    string newAN = firstOctect + firstDiffHex + secondDiffHex + fourthOctect;
+                                    Console.WriteLine("New AN -" + newAN);
+                                    newANS[anCount] = newAN;
+                                    anCount++;
+                                    //if (anCount == 1) break;
+
+
+                                }
+                                coin.an = newANS;
+                                coinCount++;
+                                FS.WriteCoin(coin, VaultPath,true);
+                               // if (coinCount ==1) break;
+                            }
+                            Console.WriteLine("md5 hash - "+md5 + "-" + intAgain+ ". Coin Counted-"+ coinCount);
+
+                        }
+                        if(command == "fromVault")
+                        {
+
+                        }
+                        File.Delete(e.FullPath);
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
             }
         }

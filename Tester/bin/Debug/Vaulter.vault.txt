@@ -1,0 +1,6 @@
+{
+	"command":"toVault",
+	"account":"defaultuser",
+	"passphrase":"password",
+	"cloudcoin": "all"
+}

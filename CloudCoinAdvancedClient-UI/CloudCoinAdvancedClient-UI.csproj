@@ -7,7 +7,7 @@
     <ProjectGuid>{5B934244-B74D-427F-891D-E81A6F1CACBD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CloudCoinAdvancedClient_UI</RootNamespace>
-    <AssemblyName>CloudCoinAdvancedClient_UI</AssemblyName>
+    <AssemblyName>CloudCoinAdvancedClient-UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,6 +52,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +92,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudCoin-Backupper\CloudCoin-Backupper.csproj">
+      <Project>{ae3be121-a79c-4aae-91d2-be89098ae77f}</Project>
+      <Name>CloudCoin-Backupper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoin-Echoer\CloudCoin-Echoer.csproj">
+      <Project>{fba12216-efdc-4016-b87d-bbb2fa002524}</Project>
+      <Name>CloudCoin-Echoer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoin-Exporter\CloudCoin-Exporter.csproj">
+      <Project>{1fc38125-e257-4f2f-a14f-effb8b0e4e8d}</Project>
+      <Name>CloudCoin-Exporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoin-ShowCoins\CloudCoin-ShowCoins.csproj">
+      <Project>{9ea69d99-0bea-4954-877e-6e0948a66c83}</Project>
+      <Name>CloudCoin-ShowCoins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoin-Unpacker\CloudCoin-Unpacker.csproj">
+      <Project>{5cbcf758-c957-4675-8f14-c70dad0d6293}</Project>
+      <Name>CloudCoin-Unpacker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoinAuthenticator\CloudCoinAuthenticator.csproj">
+      <Project>{438c87f0-7908-447d-bc2a-a06e9026e81b}</Project>
+      <Name>CloudCoinAuthenticator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoinCore\CloudCoinCore.csproj">
+      <Project>{87b7c601-6323-44f8-9d19-9e93e3af6855}</Project>
+      <Name>CloudCoinCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoinEraser\CloudCoinEraser.csproj">
+      <Project>{7063fe83-2f45-47e6-8a6c-4990a1c59a93}</Project>
+      <Name>CloudCoinEraser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudCoinGrader\CloudCoinGrader.csproj">
+      <Project>{6a849c30-397e-473c-8ea0-9590c8651eef}</Project>
+      <Name>CloudCoinGrader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FolderManager\FolderManager.csproj">
+      <Project>{3d211c49-ae48-4ced-9746-a900a472e587}</Project>
+      <Name>FolderManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -749,6 +749,30 @@ namespace CloudCoinCore
             }
         }
 
+        public void WriteCoin(CloudCoin coin, string folder, bool replaceExisting = true)
+        {
+            var folderCoins = LoadFolderCoins(folder);
+            string fileName = (coin.FileName);
+            int coinExists = (from x in folderCoins
+                              where x.sn == coin.sn
+                              select x).Count();
+            if (coinExists > 0 && !replaceExisting)
+            {
+                string suffix = Utils.RandomString(16);
+                fileName += suffix.ToLower();
+            }
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Converters.Add(new JavaScriptDateTimeConverter());
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+            Stack stack = new Stack(coin);
+            using (StreamWriter sw = new StreamWriter(folder + Path.DirectorySeparatorChar + fileName + ".stack"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, stack);
+            }
+        }
+
+
         public void WriteCoinToFile(CloudCoin coin, string filename)
         {
 
