@@ -17,7 +17,8 @@ D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\bin\Debug\Newtonsoft.
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\bin\Debug\zxing.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\bin\Debug\zxing.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\bin\Debug\SkiaSharp.xml
-D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\obj\Debug\CloudCoinGrader.csprojResolveAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\obj\Debug\CloudCoinGrader.csproj.CoreCompileInputs.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\obj\Debug\CloudCoinGrader.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\obj\Debug\CloudCoinGrader.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\obj\Debug\CloudCoinGrader.csprojAssemblyReference.cache
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinGrader\obj\Debug\CloudCoinGrader.csproj.CopyComplete

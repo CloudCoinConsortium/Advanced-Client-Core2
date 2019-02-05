@@ -17,7 +17,8 @@ D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\bin\Debug\Newt
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\bin\Debug\zxing.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\bin\Debug\zxing.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\bin\Debug\SkiaSharp.xml
-D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\obj\Debug\CloudCoinAuthenticator.csprojResolveAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\obj\Debug\CloudCoinAuthenticator.csproj.CoreCompileInputs.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\obj\Debug\CloudCoinAuthenticator.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\obj\Debug\CloudCoinAuthenticator.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\obj\Debug\CloudCoinAuthenticator.csprojAssemblyReference.cache
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinAuthenticator\obj\Debug\CloudCoinAuthenticator.csproj.CopyComplete

@@ -36,7 +36,8 @@ D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\bin\Debug\Newtonsoft
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\bin\Debug\zxing.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\bin\Debug\zxing.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\bin\Debug\SkiaSharp.xml
-D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\obj\Debug\CloudCoin-Echoer.csprojResolveAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\obj\Debug\CloudCoin-Echoer.csproj.CoreCompileInputs.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\obj\Debug\CloudCoin-Echoer.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\obj\Debug\CloudCoin-Echoer.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\obj\Debug\CloudCoin-Echoer.csprojAssemblyReference.cache
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-Echoer\obj\Debug\CloudCoin-Echoer.csproj.CopyComplete

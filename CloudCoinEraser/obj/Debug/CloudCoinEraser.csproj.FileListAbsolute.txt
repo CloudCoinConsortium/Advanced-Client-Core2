@@ -17,7 +17,8 @@ D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\bin\Debug\Newtonsoft.
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\bin\Debug\zxing.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\bin\Debug\zxing.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\bin\Debug\SkiaSharp.xml
-D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\obj\Debug\CloudCoinEraser.csprojResolveAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\obj\Debug\CloudCoinEraser.csproj.CoreCompileInputs.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\obj\Debug\CloudCoinEraser.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\obj\Debug\CloudCoinEraser.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\obj\Debug\CloudCoinEraser.csprojAssemblyReference.cache
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoinEraser\obj\Debug\CloudCoinEraser.csproj.CopyComplete

@@ -82,7 +82,10 @@ namespace CloudCoinVaulter
                         string cloudcoin = jo.GetValue("cloudcoin").ToString();
                         FileSystem fs = new FileSystem("");
                         FS = new FileSystem(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_DETECTED);
-                        var bankCoins = FS.LoadFolderCoins(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_FRACKED);
+                        var bankCoins = FS.LoadFolderCoins(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_BANK);
+                        var frackedCoins = FS.LoadFolderCoins(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_FRACKED);
+                         bankCoins.AddRange(frackedCoins.ToList());
+                        string BankPath = FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_BANK; ;
                         string VaultPath = FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_VAULT;
                         if (command == "toVault")
                         {
@@ -96,7 +99,7 @@ namespace CloudCoinVaulter
                                 
                                 foreach(var an in coin.an)
                                 {
-                                    Console.WriteLine("AN is " + an);
+                                    //Console.WriteLine("AN is " + an);
                                     string secondOctect = an.Substring(8, 8);
                                     string thirdOctect = an.Substring(15, 8);
                                     string firstOctect = an.Substring(0, 8);
@@ -138,14 +141,73 @@ namespace CloudCoinVaulter
                                 coin.an = newANS;
                                 coinCount++;
                                 FS.WriteCoin(coin, VaultPath,true);
-                               // if (coinCount ==1) break;
+                                //Console.WriteLine(coin.ExistingFileName);
+
+                              //  File.Delete(FolderManager.FolderManager.RootPath + Path.PathSeparator + Config.TAG_BANK + Path.DirectorySeparatorChar + coin.ExistingFileName);
+                                File.Delete(coin.ExistingFileName );
+
+
+                                // if (coinCount ==1) break;
                             }
-                            Console.WriteLine("md5 hash - "+md5 + "-" + intAgain+ ". Coin Counted-"+ coinCount);
+                            // Console.WriteLine("md5 hash - "+md5 + "-" + intAgain+ ". Coin Counted-"+ coinCount);
 
                         }
                         if(command == "fromVault")
                         {
+                            var vaultCoins = FS.LoadFolderCoins(FolderManager.FolderManager.RootPath + Path.DirectorySeparatorChar + Config.TAG_VAULT);
+                            string md5 = CreateMD5(passphrase);
+                            string passFirstOctect = md5.Substring(0, 8);
+                            string passSecondOctect = md5.Substring(8, 8);
 
+                            int firstOctectInt = int.Parse(passFirstOctect, System.Globalization.NumberStyles.HexNumber);
+                            int secondOctectInt = int.Parse(passSecondOctect, System.Globalization.NumberStyles.HexNumber);
+
+                            Console.WriteLine(passFirstOctect);
+                            Console.WriteLine(passSecondOctect);
+                            Console.WriteLine(firstOctectInt);
+                            Console.WriteLine(secondOctectInt);
+
+                            foreach(var coin in vaultCoins)
+                            {
+                                var ans = coin.an;
+                                List<string> newANS = new List<string>(new string[Config.NodeCount]);
+                                int anCount = 0;
+                                foreach (var an in ans)
+                                {
+                                    string secondOctect = an.Substring(8, 8);
+                                    string thirdOctect = an.Substring(15, 8);
+                                    string firstOctect = an.Substring(0, 8);
+                                    string fourthOctect = an.Substring(23, 8);
+
+                                    int thirdOctectInt = int.Parse(thirdOctect, System.Globalization.NumberStyles.HexNumber);
+                                    int scondOctectInt = int.Parse(secondOctect, System.Globalization.NumberStyles.HexNumber);
+
+                                    Console.WriteLine(thirdOctectInt);
+                                    Console.WriteLine(scondOctectInt);
+
+                                    int van1 = firstOctectInt + scondOctectInt ;
+                                    int van2 = secondOctectInt + thirdOctectInt;
+
+                                    string firstAN = van1.ToString("X");
+                                    string secondAN = van2.ToString("X");
+
+                                    Console.WriteLine(firstAN + "-" + secondAN);
+
+                                    string newAN = firstOctect + firstAN + secondAN + fourthOctect;
+                                    newANS[anCount] = newAN;
+                                    anCount++;
+
+
+                                }
+                                coin.an = newANS;
+                                //coinCount++;
+                                FS.WriteCoin(coin, BankPath, true);
+                                //Console.WriteLine(coin.ExistingFileName);
+
+                                //  File.Delete(FolderManager.FolderManager.RootPath + Path.PathSeparator + Config.TAG_BANK + Path.DirectorySeparatorChar + coin.ExistingFileName);
+                                File.Delete(coin.ExistingFileName);
+
+                            }
                         }
                         File.Delete(e.FullPath);
                     }

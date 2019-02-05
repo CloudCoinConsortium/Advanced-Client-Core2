@@ -52,7 +52,6 @@ D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\Newtonsoft.Json.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\zxing.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\zxing.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\SkiaSharp.xml
-D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.csproj.CoreCompileInputs.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.exe
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.pdb
@@ -70,3 +69,5 @@ D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinAuthenticat
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinAuthenticator.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinVaulter.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinVaulter.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.csprojAssemblyReference.cache
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.csproj.CopyComplete

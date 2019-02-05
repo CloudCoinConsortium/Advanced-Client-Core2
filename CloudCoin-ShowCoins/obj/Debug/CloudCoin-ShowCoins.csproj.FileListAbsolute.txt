@@ -40,7 +40,8 @@ D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\bin\Debug\Newtons
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\bin\Debug\zxing.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\bin\Debug\zxing.xml
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\bin\Debug\SkiaSharp.xml
-D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\obj\Debug\CloudCoin-ShowCoins.csprojResolveAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\obj\Debug\CloudCoin-ShowCoins.csproj.CoreCompileInputs.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\obj\Debug\CloudCoin-ShowCoins.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\obj\Debug\CloudCoin-ShowCoins.pdb
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\obj\Debug\CloudCoin-ShowCoins.csprojAssemblyReference.cache
+D:\CloudCoinProjects\Advanced-Client-Core2\CloudCoin-ShowCoins\obj\Debug\CloudCoin-ShowCoins.csproj.CopyComplete

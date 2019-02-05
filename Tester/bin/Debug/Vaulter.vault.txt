@@ -1,5 +1,5 @@
 {
-	"command":"toVault",
+	"command":"fromVault",
 	"account":"defaultuser",
 	"passphrase":"password",
 	"cloudcoin": "all"
