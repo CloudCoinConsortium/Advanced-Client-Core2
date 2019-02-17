@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinAdvancedClient-UI"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinVaulter", "CloudCoinVaulter\CloudCoinVaulter.csproj", "{7EF86DFB-5130-4547-94CE-2FFD77219EDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinTranslator", "CloudCoinTranslator\CloudCoinTranslator.csproj", "{8B8CFAE3-2844-4837-82C7-65F01929A042}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF86DFB-5130-4547-94CE-2FFD77219EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B8CFAE3-2844-4837-82C7-65F01929A042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B8CFAE3-2844-4837-82C7-65F01929A042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B8CFAE3-2844-4837-82C7-65F01929A042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B8CFAE3-2844-4837-82C7-65F01929A042}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

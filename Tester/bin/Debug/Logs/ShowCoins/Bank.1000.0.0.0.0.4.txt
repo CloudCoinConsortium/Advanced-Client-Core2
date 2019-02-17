@@ -1,0 +1,4 @@
+2019-01-28 08:55:14:246 [INFO]    { "ones": 1 "fives": 0 "twentyfives": 0 "hundreds": 0 "twohundredfifties": 0 "total": 1 }
+2019-01-28 08:55:15:503 [INFO]    { "ones": 1 "fives": 0 "twentyfives": 0 "hundreds": 0 "twohundredfifties": 0 "total": 1 }
+2019-01-28 08:55:16:778 [INFO]    { "ones": 1 "fives": 0 "twentyfives": 0 "hundreds": 0 "twohundredfifties": 0 "total": 1 }
+2019-01-28 08:55:18:048 [INFO]    { "ones": 0 "fives": 0 "twentyfives": 0 "hundreds": 0 "twohundredfifties": 4 "total": 1000 }
