@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using CloudCoinServants;
-using CloudCoin_ShowCoins;
 using FolderManager;
 using System.Diagnostics;
-using CloudCoin_Backupper;
-using CloudCoinGrader;
 using CloudCoinEraser;
 using CloudCoinAuthenticator;
 using CloudCoinVaulter;
+using CloudCoinTranslator;
 
 namespace Tester
 {
@@ -57,7 +50,11 @@ namespace Tester
 
             //showCoins.showCoins();
             //Console.WriteLine("Watching folder " + CommandFolder + ".\nLogs folder- "+ FolderManager.FolderManager.ShowCoinsLogsFolder + "\n.Bank Folder location- "+ FolderManager.FolderManager.BankFolder);
+
+            Translator translator = new Translator("C:\\CloudCoinServer");
+
             Console.ReadLine();
+            
             
             
 

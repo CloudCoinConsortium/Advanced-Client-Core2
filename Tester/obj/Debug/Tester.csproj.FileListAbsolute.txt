@@ -71,3 +71,5 @@ D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinVaulter.dll
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinVaulter.pdb
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.csprojAssemblyReference.cache
 D:\CloudCoinProjects\Advanced-Client-Core2\Tester\obj\Debug\Tester.csproj.CopyComplete
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinTranslator.dll
+D:\CloudCoinProjects\Advanced-Client-Core2\Tester\bin\Debug\CloudCoinTranslator.pdb

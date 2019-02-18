@@ -81,6 +81,10 @@
       <Project>{6a849c30-397e-473c-8ea0-9590c8651eef}</Project>
       <Name>CloudCoinGrader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CloudCoinTranslator\CloudCoinTranslator.csproj">
+      <Project>{8b8cfae3-2844-4837-82c7-65f01929a042}</Project>
+      <Name>CloudCoinTranslator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CloudCoinVaulter\CloudCoinVaulter.csproj">
       <Project>{7ef86dfb-5130-4547-94ce-2ffd77219edc}</Project>
       <Name>CloudCoinVaulter</Name>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using CloudCoinCore;
+using Newtonsoft.Json;
 
 namespace CloudCoinTranslator
 {
@@ -12,14 +13,14 @@ namespace CloudCoinTranslator
     {
         public string BasePath = "";
         public static FileSystem FS;
-        string LogsFolder;
+        static string LogsFolder;
         string EchoerLogsFolder;
         string AuthenticatorLogsFolder;
         string LossFixerLogsFolder;
         string ShowCoinsLogsFolder;
 
 
-
+        static StatusReport statusReport = new StatusReport();
         public Translator(string BasePath)
         {
             FileSystemWatcher watcher = new FileSystemWatcher();
@@ -59,7 +60,7 @@ namespace CloudCoinTranslator
             echoerwatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
                | NotifyFilters.FileName | NotifyFilters.DirectoryName;
             // Only watch text files.
-            echoerwatcher.Filter = "*.txt";
+            //echoerwatcher.Filter = "*.txt";
 
             authenticatorwatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
                | NotifyFilters.FileName | NotifyFilters.DirectoryName;
@@ -89,6 +90,12 @@ namespace CloudCoinTranslator
             showcoinswatcher.Created += new FileSystemEventHandler(EchoerOnChanged);
             lossfixerwatcher.Created += new FileSystemEventHandler(EchoerOnChanged);
 
+            echoerwatcher.EnableRaisingEvents = true;
+            watcher.EnableRaisingEvents = true;
+            watcher.EnableRaisingEvents = true;
+            watcher.EnableRaisingEvents = true;
+            Console.WriteLine("Echoer Watcher field - " + echoerwatcher.Path);
+
         }
 
         public void showCoins()
@@ -100,7 +107,130 @@ namespace CloudCoinTranslator
         {
             if (e.ChangeType == WatcherChangeTypes.Created || e.ChangeType == WatcherChangeTypes.Renamed)
             {
+                //Console.WriteLine(e.FullPath);
+                try
+                {
+                    
+                    var filenames = Path.GetFileName(e.FullPath).Split('.');
+                    string nodenum = filenames[0];
+                    string status = filenames[1];
+                    string milliseconds = filenames[2];
+                    string internaltime = filenames[3];
+                    Console.WriteLine(nodenum + "-" + status + "-" + milliseconds + "-" + internaltime);
+                    if(nodenum == "0")
+                    {
+                        statusReport.echoer.raida0ready = status;
+                    }
+                    if (nodenum == "1")
+                    {
+                        statusReport.echoer.raida1ready = status;
+                    }
+                    if (nodenum == "2")
+                    {
+                        statusReport.echoer.raida2ready = status;
+                    }
+                    if (nodenum == "3")
+                    {
+                        statusReport.echoer.raida3ready = status;
+                    }
+                    if (nodenum == "4")
+                    {
+                        statusReport.echoer.raida4ready = status;
+                    }
+                    if (nodenum == "5")
+                    {
+                        statusReport.echoer.raida5ready = status;
+                    }
+                    if (nodenum == "6")
+                    {
+                        statusReport.echoer.raida6ready = status;
+                    }
+                    if (nodenum == "7")
+                    {
+                        statusReport.echoer.raida7ready = status;
+                    }
+                    if (nodenum == "8")
+                    {
+                        statusReport.echoer.raida8ready = status;
+                    }
+                    if (nodenum == "9")
+                    {
+                        statusReport.echoer.raida9ready = status;
+                    }
+                    if (nodenum == "10")
+                    {
+                        statusReport.echoer.raida10ready = status;
+                    }
+                    if (nodenum == "11")
+                    {
+                        statusReport.echoer.raida11ready = status;
+                    }
+                    if (nodenum == "12")
+                    {
+                        statusReport.echoer.raida12ready = status;
+                    }
+                    if (nodenum == "13")
+                    {
+                        statusReport.echoer.raida13ready = status;
+                    }
+                    if (nodenum == "14")
+                    {
+                        statusReport.echoer.raida14ready = status;
+                    }
+                    if (nodenum == "15")
+                    {
+                        statusReport.echoer.raida15ready = status;
+                    }
+                    if (nodenum == "16")
+                    {
+                        statusReport.echoer.raida16ready = status;
+                    }
+                    if (nodenum == "17")
+                    {
+                        statusReport.echoer.raida17ready = status;
+                    }
+                    if (nodenum == "18")
+                    {
+                        statusReport.echoer.raida18ready = status;
+                    }
+                    if (nodenum == "19")
+                    {
+                        statusReport.echoer.raida19ready = status;
+                    }
+                    if (nodenum == "20")
+                    {
+                        statusReport.echoer.raida20ready = status;
+                    }
+                    if (nodenum == "21")
+                    {
+                        statusReport.echoer.raida21ready = status;
+                    }
+                    if (nodenum == "22")
+                    {
+                        statusReport.echoer.raida22ready = status;
+                    }
+                    if (nodenum == "23")
+                    {
+                        statusReport.echoer.raida23ready = status;
+                    }
+                    if (nodenum == "24")
+                    {
+                        statusReport.echoer.raida24ready = status;
+                    }
+                    var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+                    var text = JsonConvert.SerializeObject(statusReport, settings);
 
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine( LogsFolder, "StatusReport.txt")))
+                    {
+                            outputFile.WriteLine(text);
+                    }
+
+                    Console.WriteLine(text);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
 
         }
